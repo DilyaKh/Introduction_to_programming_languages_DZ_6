@@ -4,7 +4,7 @@
 // Задайте двумерный массив символов (тип char [,]). 
 // Создать строку из символов этого массива.
 
-// Console.Clear();
+Console.Clear();
 
 
 Console.Write("Введите размер матрицы (два числа через пробел): ");
@@ -94,12 +94,12 @@ string ConvertString(string StringToConvert)
 // Выясните, является ли она палиндромом.
 
 Console.Clear();
-Console.WriteLine("Введите строку для проверки, является ли она палиндромом:");
-string SomeLetters = Console.ReadLine();
-IsPalindrome(SomeLetters);
 
-// string test = ReverseString(SomeLetters);
-// Console.WriteLine(test);
+
+Console.WriteLine("Введите строку для проверки, является ли она палиндромом:");
+string SomeChars = Console.ReadLine();
+IsPalindrome(SomeChars);
+
 
 // Функция переворачивает строку:
 string ReverseString(string StringToReverse)
@@ -121,6 +121,50 @@ void IsPalindrome(string StringToCheck)
         Console.WriteLine("=> Да, строка является палиндромом");
     else
         Console.WriteLine("=> Нет, строка НЕ является палиндромом");
+}
+
+// -----------------------------------------------------------------------
+
+
+
+
+// -----------------------------------------------------------------------
+// ЗАДАЧА 4* (не обязательная)
+
+// Задайте строку, состоящую из слов, разделенных пробелами. 
+// Сформировать строку, в которой слова расположены в обратном порядке. 
+// В полученной строке слова должны быть также разделены пробелами.
+
+Console.Clear();
+
+Console.WriteLine("Введите строку из слов, разделенных пробелом:");
+string SomeWords = Console.ReadLine();
+ReverseWords(SomeWords);
+
+
+// Функция создает массив из строковых значений - 
+// слов, взятых из введенной пользователем строки:
+string[] WordsArray(string StringWithWords)
+{
+    string[] words = StringWithWords.Split(' ');
+
+    return words;
+}
+
+
+// Функция переворачивает слова в обратном порядке:
+void ReverseWords(string StringWithWords)
+{
+    string[] WordsToChange = WordsArray(StringWithWords);
+
+    for(int i = WordsToChange.Length - 1; i >= 0; i--)
+    {
+        Console.Write(WordsToChange[i]);
+
+        if (i > 0)
+            Console.Write(" ");
+    }
+        
 }
 
 // -----------------------------------------------------------------------
